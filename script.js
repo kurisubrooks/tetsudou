@@ -49,12 +49,12 @@ var lines = {
         name: "Hunter Line",
         colour: "#843135"
     },
-    "SOU": {
+    "SOC": {
         type: "intercity",
         name: "South Coast Line",
         colour: "#0083BF"
     },
-    "HIG": {
+    "HIL": {
         type: "intercity",
         name: "Southern Highlands Line",
         colour: "#509E45"
@@ -62,6 +62,34 @@ var lines = {
 }
 
 var data = [
+    {
+        line: "T1",
+        to: "Penrith",
+        thru: "Central",
+        platform: 2,
+        departs: 2,
+        stops: [
+            "Central",
+            "Redfern",
+            "Strathfield",
+            "Lidcombe",
+            "Parramatta",
+            "Westmead",
+            "Seven Hills",
+            "Blacktown",
+            "Doonside",
+            "Rooty Hill",
+            "Mount Druitt",
+            "St Marys",
+            "Werrington",
+            "Kingswood",
+            "Penrith"
+        ],
+        info: [
+            "8 cars",
+            "Limited Stops"
+        ]
+    },
     {
         line: "BLU",
         to: "Lithgow",
@@ -107,34 +135,6 @@ var data = [
         info: [
             "8 cars",
             "All stops"
-        ]
-    },
-    {
-        line: "T1",
-        to: "Penrith",
-        thru: "Central",
-        platform: 2,
-        departs: 2,
-        stops: [
-            "Central",
-            "Redfern",
-            "Strathfield",
-            "Lidcombe",
-            "Parramatta",
-            "Westmead",
-            "Seven Hills",
-            "Blacktown",
-            "Doonside",
-            "Rooty Hill",
-            "Mount Druitt",
-            "St Marys",
-            "Werrington",
-            "Kingswood",
-            "Penrith"
-        ],
-        info: [
-            "8 cars",
-            "Limited Stops"
         ]
     }
 ]
