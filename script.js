@@ -253,18 +253,18 @@ var data = [
         ]
     },
     {
+        service: "train",
+        line: "!",
+        to: "Does not stop",
+        thru: "Please stand behind the yellow line"
+    },
+    {
         service: "bus",
         line: "782",
         to: "St Marys",
         thru: "Cambridge Gardens",
         platform: "12",
         departs: 15
-    },
-    {
-        service: "train",
-        line: "!",
-        to: "Does not stop",
-        thru: "Please stand behind the yellow line"
     }
 ]
 
@@ -337,7 +337,7 @@ var generate = function(canvas, input) {
             fillStyle: "#555",
             fontFamily: "tp_frankregular",
             fontSize: 20,
-            text: input.line in lines ? "via " + input.thru : input.thru,
+            text: input.stops ? "via " + input.thru : input.thru,
             x: 78, y: 77
         })
     }
@@ -439,6 +439,6 @@ $(window).on("load", function() {
     generate("#screen2", data[1])
     generate("#screen3", data[2])
     generate("#screen4", data[3])
-    /*generate("#screen5", data[4])
-    generate("#screen6", data[5])*/
+    generate("#screen5", data[4])
+    //generate("#screen6", data[5])
 })
