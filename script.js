@@ -162,112 +162,6 @@ var themes = {
     }
 }
 
-var data = [
-    {
-        service: "tram",
-        line: "L2",
-        to: "Circular Quay",
-        thru: "Central",
-        platform: "A",
-        departs: 4,
-        stops: [
-            "Rawson Place",
-            "Chinatown",
-            "Town Hall",
-            "Queen Victoria",
-            "Wynyard",
-            "Grosvenor St",
-            "Circular Quay"
-        ]
-    },
-    {
-        service: "train",
-        line: "T1",
-        to: "Penrith",
-        thru: "Central",
-        platform: 2,
-        departs: 2,
-        stops: [
-            "Central",
-            "Redfern",
-            "Strathfield",
-            "Lidcombe",
-            "Parramatta",
-            "Westmead",
-            "Seven Hills",
-            "Blacktown",
-            "Doonside",
-            "Rooty Hill",
-            "Mount Druitt",
-            "St Marys",
-            "Werrington",
-            "Kingswood",
-            "Penrith"
-        ],
-        info: [
-            "8 cars",
-            "Limited Stops"
-        ]
-    },
-    {
-        service: "train",
-        line: "BLU",
-        to: "Lithgow",
-        thru: "Parramatta",
-        platform: 19,
-        departs: 17,
-        stops: [
-            "Parramatta",
-            "Blacktown",
-            "Penrith",
-            "Emu Plains",
-            "Lapstone",
-            "Glenbrook",
-            "Blaxland",
-            "Springwood",
-            "Hazelbrook",
-            "Lawson",
-            "Wentworth Falls",
-            "Leura",
-            "Katoomba",
-            "Blackheath",
-            "Mount Victoria",
-            "Bell",
-            "Zig Zag",
-            "Lithgow"
-        ],
-        info: [
-            "4 cars",
-            "Limited Stops"
-        ]
-    },
-    {
-        service: "ferry",
-        line: "F1",
-        to: "Manly",
-        thru: "Circular Quay",
-        platform: "A",
-        departs: 43,
-        stops: [
-            "Manly"
-        ]
-    },
-    {
-        service: "train",
-        line: "!",
-        to: "Does not stop",
-        thru: "Please stand behind the yellow line"
-    },
-    {
-        service: "bus",
-        line: "782",
-        to: "St Marys",
-        thru: "Cambridge Gardens",
-        platform: "12",
-        departs: 15
-    }
-]
-
 var generate = function(canvas, input) {
     $.jCanvas.defaults.fromCenter = false
     let theme = input.service === "bus" ? lines.bus.colour : themes[lines[input.line].service].colour
@@ -435,10 +329,103 @@ var generate = function(canvas, input) {
 }
 
 $(window).on("load", function() {
-    generate("#screen1", data[0])
-    generate("#screen2", data[1])
-    generate("#screen3", data[2])
-    generate("#screen4", data[3])
-    generate("#screen5", data[4])
-    //generate("#screen6", data[5])
+    generate("#screen1", {
+        line: "L2",
+        service: "tram",
+        to: "Circular Quay",
+        thru: "Central",
+        platform: "A",
+        departs: 4,
+        stops: [
+            "Rawson Place",
+            "Chinatown",
+            "Town Hall",
+            "Queen Victoria",
+            "Wynyard",
+            "Grosvenor St",
+            "Circular Quay"
+        ]
+    })
+
+    generate("#screen2", {
+        line: "T1",
+        service: "train",
+        to: "Penrith",
+        thru: "Central",
+        platform: 2,
+        departs: 2,
+        stops: [
+            "Central",
+            "Redfern",
+            "Strathfield",
+            "Lidcombe",
+            "Parramatta",
+            "Westmead",
+            "Seven Hills",
+            "Blacktown",
+            "Doonside",
+            "Rooty Hill",
+            "Mount Druitt",
+            "St Marys",
+            "Werrington",
+            "Kingswood",
+            "Penrith"
+        ],
+        info: [
+            "8 cars",
+            "Limited Stops"
+        ]
+    })
+
+    generate("#screen3", {
+        line: "BLU",
+        service: "train",
+        to: "Lithgow",
+        thru: "Parramatta",
+        platform: 19,
+        departs: 17,
+        stops: [
+            "Parramatta",
+            "Blacktown",
+            "Penrith",
+            "Emu Plains",
+            "Lapstone",
+            "Glenbrook",
+            "Blaxland",
+            "Springwood",
+            "Hazelbrook",
+            "Lawson",
+            "Wentworth Falls",
+            "Leura",
+            "Katoomba",
+            "Blackheath",
+            "Mount Victoria",
+            "Bell",
+            "Zig Zag",
+            "Lithgow"
+        ],
+        info: [
+            "4 cars",
+            "Limited Stops"
+        ]
+    })
+
+    generate("#screen4", {
+        line: "F1",
+        service: "ferry",
+        to: "Manly",
+        thru: "Circular Quay",
+        platform: "A",
+        departs: 43,
+        stops: [
+            "Manly"
+        ]
+    })
+
+    generate("#screen5", {
+        line: "!",
+        service: "train",
+        to: "Does not stop",
+        thru: "Please stand behind the yellow line"
+    })
 })
