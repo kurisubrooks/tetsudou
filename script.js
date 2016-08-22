@@ -215,7 +215,7 @@ var data = [
         to: "Lithgow",
         thru: "Parramatta",
         platform: 19,
-        departs: 7,
+        departs: 17,
         stops: [
             "Parramatta",
             "Blacktown",
@@ -247,7 +247,7 @@ var data = [
         to: "Manly",
         thru: "Circular Quay",
         platform: "A",
-        departs: 243,
+        departs: 43,
         stops: [
             "Manly"
         ]
